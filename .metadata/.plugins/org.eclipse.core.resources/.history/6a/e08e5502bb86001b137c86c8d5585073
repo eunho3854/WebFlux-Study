@@ -1,0 +1,14 @@
+package reactorex01;
+
+import java.util.concurrent.Flow.Publisher;
+import java.util.concurrent.Flow.Subscriber;
+
+//<T> 내가 발행할 정보
+public class MyPublicher implements  Publisher<Integer>{
+
+	// 구독
+	public void subscribe(Subscriber<? super Integer> subscriber) {
+		System.out.println("1. 구독시작");
+	}
+
+}

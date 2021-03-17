@@ -1,0 +1,15 @@
+package reactorex01;
+
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+
+
+//<T> 내가 발행할 데이터의 타입
+public class MyPublicher implements Publisher<Integer>{
+
+	// 구독
+	public void subscribe(Subscriber<? super Integer> s) {
+		System.out.println("1. 구독 시작");
+		
+	}
+}

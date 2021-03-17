@@ -1,0 +1,27 @@
+package reactorex01;
+
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+// <T> 구독할 데이터 타입
+public class MySubscriber implements Subscriber<Integer>{
+
+	public void onSubscribe(Subscription s) {
+		System.out.println("2. 구독 응답 완료");
+	}
+
+	public void onNext(Integer t) {
+		
+	}
+
+	public void onError(Throwable t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onComplete() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

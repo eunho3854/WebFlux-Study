@@ -1,0 +1,18 @@
+package reactorex01;
+
+import org.reactivestreams.Subscription;
+
+// 구독 정보
+public class MySubscription implements Subscription{
+
+	public void request(long n) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void cancel() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

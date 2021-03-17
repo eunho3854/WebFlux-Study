@@ -1,0 +1,22 @@
+package com.cos.reactorex02;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import reactor.core.publisher.Sinks;
+
+@RestController
+public class TestController2 {
+
+	Sinks.Many<String> sink;
+	
+	@GetMapping("/send")
+	public void send() {
+		
+	}
+	
+	@GetMapping(value = "/sse")
+	public void sse() {
+		
+	}
+}

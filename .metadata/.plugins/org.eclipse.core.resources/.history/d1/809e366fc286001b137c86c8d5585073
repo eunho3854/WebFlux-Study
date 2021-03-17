@@ -1,0 +1,11 @@
+package reactorex01;
+
+public class MainApp {
+
+	public static void main(String[] args) {
+		MyPublicher pub = new MyPublicher();
+		MySubscriber sub = new MySubscriber();
+		
+		pub.subscribe(sub);
+	}
+}
