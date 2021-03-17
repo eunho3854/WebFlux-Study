@@ -37,7 +37,7 @@ public class TestController2 {
 	@GetMapping(value = "/sse")
 	public Flux<ServerSentEvent<String>> sse() { // ServerSentEvent의 ContentType은 text event stream
 		return sink.asFlux().map(e -> ServerSentEvent.builder(e).build()).doOnCancel(() -> {
-			System.out.println("SSE 종료됨...");
+			System.out.println("SSE 종료됨.");
 			sink.asFlux().blockLast();
 		}); // 구독
 	}
