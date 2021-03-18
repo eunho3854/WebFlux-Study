@@ -3,9 +3,12 @@ package com.cos.reactorex02;
 import org.springframework.http.codec.ServerSentEvent;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 import reactor.core.publisher.Sinks;
 
 @CrossOrigin
@@ -23,14 +26,15 @@ public class TestController2 {
 	
 	@GetMapping(value = "/")
 	public Flux<Integer> findAll() {
-		return Flux.just(1,2,3,4,5,6).log();
+		return Flux.just(1).log();
 	}
 	
-	
-	@GetMapping("/send")
-	public void send() {
+	@CrossOrigin
+	@PostMapping("/send")
+	public Mono<Chat> send(@RequestBody Chat chat) {
 		// DB에 HelloWorld 저장
-		sink.tryEmitNext("Hello World");
+		sink.tryEmitNext(chat.getName() + " : " + chat.getContent());
+		return Mono.just(chat);
 	}
 
 	// data : 실제값\n\n
